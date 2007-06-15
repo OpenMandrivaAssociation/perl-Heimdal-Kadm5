@@ -1,6 +1,6 @@
 %define module  Heimdal-Kadm5
 %define name    perl-%{module}
-%define version 0.04
+%define version 0.06
 %define release %mkrel 1
 
 Name:		%{name}
@@ -10,7 +10,7 @@ Summary:	Convert numbers to strings with pretty formatting
 License:	Artistic/GPL
 Group:		Development/Perl
 URL:		http://www.pdc.kth.se/heimdal/
-Source:		ftp://ftp.su.se/pub/users/leifj/%{module}-%{version}.tar.bz2
+Source:		ftp://ftp.su.se/pub/users/leifj/%{module}-%{version}.tar.gz
 BuildRequires:	perl-devel
 BuildRequires:	heimdal-devel
 BuildRoot:	    %{_tmppath}/%{name}-%{version}
