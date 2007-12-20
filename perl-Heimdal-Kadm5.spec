@@ -13,6 +13,7 @@ URL:		http://www.pdc.kth.se/heimdal/
 Source:		ftp://ftp.su.se/pub/users/leifj/%{module}-%{version}.tar.gz
 BuildRequires:	perl-devel
 BuildRequires:	heimdal-devel
+BuildRoot:	    %{_tmppath}/%{name}-%{version}
 
 %description
 Number::Format is a library for formatting numbers.  Functions are
