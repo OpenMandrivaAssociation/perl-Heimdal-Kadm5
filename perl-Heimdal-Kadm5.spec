@@ -12,7 +12,7 @@ Group:		Development/Perl
 URL:		http://www.pdc.kth.se/heimdal/
 Source:		ftp://ftp.su.se/pub/users/leifj/%{module}-%{version}.tar.gz
 BuildRequires:	perl-devel
-BuildRequires:	heimdal-devel
+BuildRequires:	heimdal-devel krb5-devel
 BuildRoot:	    %{_tmppath}/%{name}-%{version}
 
 %description
