@@ -1,7 +1,7 @@
 %define module  Heimdal-Kadm5
 %define name    perl-%{module}
 %define version 0.06
-%define release %mkrel 3
+%define release %mkrel 4
 
 Name:		%{name}
 Version:	%{version}
@@ -29,7 +29,7 @@ user.
 %setup -q -n %{module}-%{version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+%{__perl} Makefile.PL INSTALLDIRS=vendor INC="-I%{_includedir}/heimdal"
 %make
 
 %install
