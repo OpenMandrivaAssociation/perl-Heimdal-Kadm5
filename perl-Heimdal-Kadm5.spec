@@ -1,7 +1,7 @@
 %define module  Heimdal-Kadm5
 %define name    perl-%{module}
 %define version 0.06
-%define release %mkrel 7
+%define release %mkrel 8
 
 Name:		%{name}
 Version:	%{version}
@@ -12,7 +12,7 @@ Group:		Development/Perl
 URL:		http://www.pdc.kth.se/heimdal/
 Source:		ftp://ftp.su.se/pub/users/leifj/%{module}-%{version}.tar.gz
 BuildRequires:	perl-devel
-BuildRequires:	heimdal-devel krb5-devel
+BuildRequires:	heimdal-devel
 BuildRoot:	    %{_tmppath}/%{name}-%{version}
 
 %description
