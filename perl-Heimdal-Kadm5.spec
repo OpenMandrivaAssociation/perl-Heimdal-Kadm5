@@ -1,12 +1,12 @@
 %define module  Heimdal-Kadm5
 %define name    perl-%{module}
 %define version 0.06
-%define release %mkrel 8
+%define release %mkrel 9
 
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Summary:	Convert numbers to strings with pretty formatting
+Summary:	Perl extension for adminstration of Heimdal Kerberos servers
 License:	Artistic/GPL
 Group:		Development/Perl
 URL:		http://www.pdc.kth.se/heimdal/
@@ -16,14 +16,13 @@ BuildRequires:	heimdal-devel
 BuildRoot:	    %{_tmppath}/%{name}-%{version}
 
 %description
-Number::Format is a library for formatting numbers.  Functions are
-provided for converting numbers to strings in a variety of ways, and to
-convert strings that contain numbers back into numeric form.  The output
-formats may include thousands separators - characters inserted between
-each group of three characters counting right to left from the decimal
-point.  The characters used for the decimal point and the thousands
-separator come from the locale information or can be specified by the
-user.
+Heimdal::Kadm5 is a basic XSUB perl glue to the Heimdal
+(http://www.pdc.kth.se/src/heimdal) kadm5clnt library. Heimdal is a free,
+slightly less export challenged implementation of Kerberos5 by Assar Westerlund
+and Johan Danielsson. Heimdal::Kadm5 allows you to perform more administration
+of your kdc than you can usually pull off with the included kadmin program.
+Heimdal::Kadm5 should be considered alpha-code and may consequently crash and
+burn but should not muck up your kdc any more than kadmin itself does.
 
 %prep
 %setup -q -n %{module}-%{version}
