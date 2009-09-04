@@ -1,7 +1,7 @@
 %define module  Heimdal-Kadm5
 %define name    perl-%{module}
 %define version 0.06
-%define release %mkrel 9
+%define release %mkrel 10
 
 Name:		%{name}
 Version:	%{version}
