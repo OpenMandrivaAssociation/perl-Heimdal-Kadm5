@@ -40,3 +40,62 @@ perl Makefile.PL INSTALLDIRS=vendor INC="-I%{_includedir}/heimdal"
 %{perl_vendorarch}/Heimdal
 %{perl_vendorarch}/auto/Heimdal
 %{_mandir}/*/*
+
+
+%changelog
+* Sun Feb 12 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.80.0-3
++ Revision: 773665
+- clean out spec
+- mass rebuild of perl extensions against perl 5.14.2
+
+* Mon Mar 29 2010 Guillaume Rousse <guillomovitch@mandriva.org> 0.80.0-2mdv2010.1
++ Revision: 528738
+- rebuild
+
+* Sun Feb 21 2010 Guillaume Rousse <guillomovitch@mandriva.org> 0.80.0-1mdv2010.1
++ Revision: 509022
+- new version
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 0.06-10mdv2010.0
++ Revision: 430465
+- rebuild
+
+* Thu Oct 02 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.06-9mdv2009.0
++ Revision: 290794
+- fix summary and description (spotted by Buchan)
+
+* Tue Sep 30 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.06-8mdv2009.0
++ Revision: 290160
+- rebuild to fix linkage
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+
+* Tue Jan 22 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.06-5mdv2008.1
++ Revision: 156901
+- fix build
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - add BR on krb5-devel
+    - rebuild
+    - kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <blino@mandriva.org>
+    - restore BuildRoot
+
+* Thu Sep 06 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.06-2mdv2008.0
++ Revision: 81308
+- rebuild
+
+* Fri Jun 15 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.06-1mdv2008.0
++ Revision: 39960
+- new version
+
+* Wed May 02 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.04-1mdv2008.0
++ Revision: 20499
+- Import perl-Heimdal-Kadm5
+
+
+
+* Thu Apr 26 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.04-1mdv2008.0
+- first mdv release
