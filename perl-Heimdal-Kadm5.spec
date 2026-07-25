@@ -2,13 +2,13 @@
 %define upstream_version 0.08
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	6
 Summary:	Perl extension for adminstration of Heimdal Kerberos servers
 License:	Artistic/GPL
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/L/LE/LEIFJ/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/Heimdal-Kadm5
+Source0:	https://cpan.metacpan.org/authors/id/L/LE/LEIFJ/Heimdal-Kadm5-%{upstream_version}.tar.gz
 BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	heimdal-devel
