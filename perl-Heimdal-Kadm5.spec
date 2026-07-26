@@ -1,14 +1,12 @@
 %define upstream_name Heimdal-Kadm5
-%define upstream_version 0.08
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	6
+Version:	0.08
+Release:	7
 Summary:	Perl extension for adminstration of Heimdal Kerberos servers
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Heimdal-Kadm5
-Source0:	https://cpan.metacpan.org/authors/id/L/LE/LEIFJ/Heimdal-Kadm5-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/L/LE/LEIFJ/Heimdal-Kadm5-%{version}.tar.gz
 BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	heimdal-devel
@@ -23,7 +21,7 @@ Heimdal::Kadm5 should be considered alpha-code and may consequently crash and
 burn but should not muck up your kdc any more than kadmin itself does.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor INC="-I%{_includedir}/heimdal"
