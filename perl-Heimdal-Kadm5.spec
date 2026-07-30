@@ -2,7 +2,7 @@
 %define upstream_version 0.08
 Name:		perl-%{upstream_name}
 Version:	0.08
-Release:	2
+Release:	3
 Summary:	Perl extension for adminstration of Heimdal Kerberos servers
 License:	Artistic/GPL
 Group:		Development/Perl
@@ -35,7 +35,7 @@ perl Makefile.PL INSTALLDIRS=vendor INC="-I%{_includedir}/heimdal"
 # soft: do not fail package on test failures
 set +e
 # doesn't work without a running KDC
-#make test
+#make test || :
 
 %files
 %doc Changes README
