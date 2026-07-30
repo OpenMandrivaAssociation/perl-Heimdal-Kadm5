@@ -2,7 +2,7 @@
 %define upstream_version 0.08
 Name:		perl-%{upstream_name}
 Version:	0.08
-Release:	3
+Release:	4
 Summary:	Perl extension for adminstration of Heimdal Kerberos servers
 License:	Artistic/GPL
 Group:		Development/Perl
@@ -11,6 +11,8 @@ Source0:	https://cpan.metacpan.org/authors/id/L/LE/LEIFJ/Heimdal-Kadm5-0.08.tar.
 BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	heimdal-devel
+BuildRequires:	pkgconfig(com_err)
+BuildRequires:	pkgconfig(libkrb5)
 
 %description
 Heimdal::Kadm5 is a basic XSUB perl glue to the Heimdal
@@ -26,8 +28,7 @@ burn but should not muck up your kdc any more than kadmin itself does.
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor INC="-I%{_includedir}/heimdal"
-%make
-
+%make_build
 %install
 %makeinstall_std
 
