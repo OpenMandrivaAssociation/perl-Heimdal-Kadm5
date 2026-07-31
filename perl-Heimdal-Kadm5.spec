@@ -2,7 +2,7 @@
 %define upstream_version 0.08
 Name:		perl-%{upstream_name}
 Version:	0.08
-Release:	16
+Release:	17
 Summary:	Perl extension for adminstration of Heimdal Kerberos servers
 License:	Artistic/GPL
 Group:		Development/Perl
