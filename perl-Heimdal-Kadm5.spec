@@ -2,14 +2,13 @@
 %define upstream_version 0.08
 Name:		perl-%{upstream_name}
 Version:	0.08
-Release:	5
+Release:	6
 Summary:	Perl extension for adminstration of Heimdal Kerberos servers
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Heimdal-Kadm5
 Source0:	https://cpan.metacpan.org/authors/id/L/LE/LEIFJ/Heimdal-Kadm5-0.08.tar.gz
 BuildRequires:	make
-BuildRequires:	clang
 BuildRequires:	perl-devel
 BuildRequires:	heimdal-devel
 BuildRequires:	pkgconfig(com_err)
@@ -29,14 +28,12 @@ sed -i -e 's/kadm5_c_/kadm5_/g' Kadm5.xs
 
 
 %build
-export CC=clang
 # heimdal headers expect et/com_err.h
 if [ ! -e /usr/include/et/com_err.h ] && [ -e /usr/include/com_err.h ]; then
   mkdir -p et
   ln -sf /usr/include/com_err.h et/com_err.h
   export CPATH="$PWD:${CPATH:-}"
 fi
-export CC=clang
 export CFLAGS="${CFLAGS:-} -Wno-error=implicit-function-declaration -Wno-deprecated-declarations"
 perl Makefile.PL INSTALLDIRS=vendor INC="-I%{_includedir}/heimdal"
 %make_build
