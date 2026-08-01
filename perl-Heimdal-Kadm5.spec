@@ -2,7 +2,7 @@
 %define upstream_version 0.08
 Name:		perl-%{upstream_name}
 Version:	0.08
-Release:	3
+Release:	4
 Summary:	Perl extension for adminstration of Heimdal Kerberos servers
 License:	Artistic/GPL
 Group:		Development/Perl
@@ -12,6 +12,7 @@ BuildRequires:	make
 BuildRequires:	clang
 BuildRequires:	perl-devel
 BuildRequires:	heimdal-devel
+BuildRequires:	pkgconfig(com_err)
 %description
 Heimdal::Kadm5 is a basic XSUB perl glue to the Heimdal
 (http://www.pdc.kth.se/src/heimdal) kadm5clnt library. Heimdal is a free,
@@ -25,6 +26,13 @@ burn but should not muck up your kdc any more than kadmin itself does.
 %setup -q -n Heimdal-Kadm5-0.08
 
 %build
+export CC=clang
+# heimdal headers expect et/com_err.h
+if [ ! -e /usr/include/et/com_err.h ] && [ -e /usr/include/com_err.h ]; then
+  mkdir -p et
+  ln -sf /usr/include/com_err.h et/com_err.h
+  export CPATH="$PWD:${CPATH:-}"
+fi
 perl Makefile.PL INSTALLDIRS=vendor INC="-I%{_includedir}/heimdal"
 %make_build
 %install
