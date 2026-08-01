@@ -2,7 +2,7 @@
 %define upstream_version 0.08
 Name:		perl-%{upstream_name}
 Version:	0.08
-Release:	4
+Release:	5
 Summary:	Perl extension for adminstration of Heimdal Kerberos servers
 License:	Artistic/GPL
 Group:		Development/Perl
@@ -24,6 +24,9 @@ burn but should not muck up your kdc any more than kadmin itself does.
 
 %prep
 %setup -q -n Heimdal-Kadm5-0.08
+# Modern Heimdal exposes kadm5_* instead of private kadm5_c_* symbols
+sed -i -e 's/kadm5_c_/kadm5_/g' Kadm5.xs
+
 
 %build
 export CC=clang
@@ -33,6 +36,8 @@ if [ ! -e /usr/include/et/com_err.h ] && [ -e /usr/include/com_err.h ]; then
   ln -sf /usr/include/com_err.h et/com_err.h
   export CPATH="$PWD:${CPATH:-}"
 fi
+export CC=clang
+export CFLAGS="${CFLAGS:-} -Wno-error=implicit-function-declaration -Wno-deprecated-declarations"
 perl Makefile.PL INSTALLDIRS=vendor INC="-I%{_includedir}/heimdal"
 %make_build
 %install
